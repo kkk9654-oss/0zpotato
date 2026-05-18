@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 316ca509f5c00ed4da7c312ec91c4169
+    m_Address: "Assets/Scenes/\uC2A4\uD06C\uB9B0\uC0F7 2026-05-12 170051.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 37d307305e9528a48a2e0ffdadfe5760
     m_Address: Texture2D/Texture2D_Loading_2
     m_ReadOnly: 0
