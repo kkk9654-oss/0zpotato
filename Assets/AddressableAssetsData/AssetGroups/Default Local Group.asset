@@ -70,6 +70,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfae54927984bc0438510ef775196561
+    m_Address: "Assets/Scenes/\uC2A4\uD06C\uB9B0\uC0F7_2026-05-19_114235-removebg-preview.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cfc5f99017f834a4aa425168d9f3048d
     m_Address: Icon/Icon_Item_Corn
     m_ReadOnly: 0
