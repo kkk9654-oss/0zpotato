@@ -90,6 +90,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebe9cdef8a884df4ba6c79b0917b9890
+    m_Address: "Assets/Scenes/\uAC10\uC790 \uB85C\uB529.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa10f0e6a7fa0194585cc5d634b0a558
     m_Address: 2DPrefab/DropItem_Gold
     m_ReadOnly: 0
