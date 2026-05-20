@@ -50,6 +50,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 695949b556361e84db86dd9120773c01
+    m_Address: "Assets/Scenes/\uC2A4\uD06C\uB9B0\uC0F7_2026-05-20_092023-removebg-preview.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6caf508fb2c9a304cbab300f30d5cf19
     m_Address: Sound/Voice_Pug_1_I_WantToEatPizza
     m_ReadOnly: 0
