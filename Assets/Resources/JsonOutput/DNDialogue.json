@@ -2,7 +2,7 @@
   {
     "Id": "dialogue_mainstream_1_1_100",
     "CharacterDataId": null,
-    "Description": "새로운 세계에 접속 하셨습니다…<np>오랜시간 기다리셨는데..<np>제가 많이 늦었군요...",
+    "Description": "감자도리 왕국에 접속 하셨습니다…<np>흉악한 패스트푸드로 부터 왕국을 지켜주세요!!!..<np>건투를 빕니다...",
     "NextDialogueId": "dialogue_mainstream_1_1_200",
     "SelectionNameList": null,
     "SelectionDialogueIdList": null,
@@ -12,8 +12,8 @@
   {
     "Id": "dialogue_mainstream_1_1_200",
     "CharacterDataId": null,
-    "Description": "용사님이시어..고생하셨군요",
-    "NextDialogueId": "dialogue_mainstream_1_1_300",
+    "Description": "감자도리 만세!!!",
+    "NextDialogueId": "dialogue_maistream_1_1_300",
     "SelectionNameList": null,
     "SelectionDialogueIdList": null,
     "TexturePath": null,
@@ -22,7 +22,7 @@
   {
     "Id": "dialogue_mainstream_1_1_300",
     "CharacterDataId": null,
-    "Description": "다만 아직 야근이 남아 있습니다. 좀 더 고생해주세요.",
+    "Description": "아직 남아있는 패스트푸드 몬스터를 섬멸해주세요. 그럼 20000.....",
     "NextDialogueId": null,
     "SelectionNameList": null,
     "SelectionDialogueIdList": null,
