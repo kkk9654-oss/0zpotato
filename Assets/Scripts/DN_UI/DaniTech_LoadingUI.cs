@@ -24,8 +24,8 @@ public class DaniTech_LoadingUI : DaniTechUIBase
 
     private void LoadAndSetLoadingImg()
     {
-        int randomIdx = UnityEngine.Random.Range(0, 2);
-
+        //  int randomIdx = UnityEngine.Random.Range(0, 2);
+        int randomIdx = 2;
         string texturePath = string.Empty;
         switch (randomIdx)
         {
@@ -35,7 +35,12 @@ public class DaniTech_LoadingUI : DaniTechUIBase
             case 1:
                 texturePath = "Texture2D/Texture2D_Loading_2";
                 break;
+            case 2:
+                texturePath="Texture2D/Texture2D_Loading_3";
+                break;
+            
         }
+        
 
         DaniTechGameUtil.LoadAndSetTexture(RawImage_LoadingImg, texturePath).Forget();
         StartLoadingResouce(0.5f).Forget();

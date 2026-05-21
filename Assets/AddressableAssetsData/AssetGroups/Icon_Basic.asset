@@ -20,11 +20,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b28c3fc6e6dfdb543bb0344328a5b40f
-    m_Address: Icon/Icon_Item_Gold_1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 63c4807bce69c4648a6a3ca45ef8109f, type: 2}
   m_SchemaSet:
