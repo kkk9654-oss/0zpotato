@@ -2,7 +2,7 @@
   {
     "Id": "dialogue_mainstream_1_1_100",
     "CharacterDataId": null,
-    "Description": "감자도리 왕국에 접속 하셨습니다…<np>흉악한 패스트푸드로 부터 왕국을 지켜주세요!!!..<np>건투를 빕니다...",
+    "Description": "감자도리 왕국에 접속 하셨습니다…<np>흉악한 패스트푸드로 부터 신선한 감자를 탈환해주세요!!!..<np>건투를 빕니다...",
     "NextDialogueId": "dialogue_mainstream_1_1_200",
     "SelectionNameList": null,
     "SelectionDialogueIdList": null,
