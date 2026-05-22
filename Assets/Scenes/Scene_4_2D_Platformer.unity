@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2940f4285deca049acf3dc4076febff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHP
-  maxHP: 3
+  maxHP: 10
   currentHP: 0
   gameOverText: {fileID: 872063579}
 --- !u!1 &872063579
