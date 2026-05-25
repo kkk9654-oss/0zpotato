@@ -2,20 +2,12 @@ using UnityEngine;
 
 public class MonsterMove : MonoBehaviour
 {
-    public float moveSpeed = 2f;
+    public float moveSpeed = 1f;
 
     public Transform leftPoint;
     public Transform rightPoint;
 
     private bool movingRight = true;
-
-    void Start()
-    {
-        if (leftPoint == null || rightPoint == null)
-        {
-            Debug.LogError("LeftPoint 또는 RightPoint가 Inspector에 연결되지 않았습니다!");
-        }
-    }
 
     void Update()
     {
@@ -26,25 +18,19 @@ public class MonsterMove : MonoBehaviour
 
     void Move()
     {
-        if (movingRight)
-        {
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+        Transform target = movingRight ? rightPoint : leftPoint;
 
-            if (transform.position.x >= rightPoint.position.x)
-            {
-                movingRight = false;
-                Flip();
-            }
-        }
-        else
-        {
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(
+            transform.position,
+            target.position,
+            moveSpeed * Time.deltaTime
+        );
 
-            if (transform.position.x <= leftPoint.position.x)
-            {
-                movingRight = true;
-                Flip();
-            }
+        // 목표 지점 도착
+        if (Vector2.Distance(transform.position, target.position) < 0.05f)
+        {
+            movingRight = !movingRight;
+            Flip();
         }
     }
 
