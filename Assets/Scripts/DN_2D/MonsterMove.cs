@@ -5,7 +5,7 @@ public class MonsterMove : MonoBehaviour
     // 이동 속도
     public float moveSpeed = 2f;
 
-    // 🔥 이동 범위 설정
+    // 이동 범위
     public float leftLimit = -20f;
     public float rightLimit = 20f;
 
@@ -83,25 +83,28 @@ public class MonsterMove : MonoBehaviour
 
         Vector3 pos = transform.position;
 
-        // 카메라 화면 경계 계산
+        // 🔥 카메라와 몬스터 거리 계산
+        float distance =
+            Mathf.Abs(transform.position.z - cam.transform.position.z);
+
+        // 🔥 화면 경계 계산
         Vector3 leftBound =
-            cam.ViewportToWorldPoint(new Vector3(0, 0.5f, 0));
+            cam.ViewportToWorldPoint(new Vector3(0, 0.5f, distance));
 
         Vector3 rightBound =
-            cam.ViewportToWorldPoint(new Vector3(1, 0.5f, 0));
+            cam.ViewportToWorldPoint(new Vector3(1, 0.5f, distance));
 
-        // 화면 안으로 제한
+        // 🔥 화면 안으로 제한
         pos.x = Mathf.Clamp(pos.x, leftBound.x, rightBound.x);
 
         transform.position = pos;
     }
 
-    // Scene 창에서 이동 범위 표시
+    // Scene 창 이동 범위 표시
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
 
-        // 이동 범위 선 표시
         Gizmos.DrawLine(
             new Vector3(leftLimit, transform.position.y, 0),
             new Vector3(rightLimit, transform.position.y, 0)
