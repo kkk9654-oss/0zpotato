@@ -115,12 +115,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f41fc05c175be42499463433b6ccf68c
-    m_Address: "Assets/Resources_moved/Prefab2DObject/\uC2A4\uD06C\uB9B0\uC0F7 2026-05-27
-      115027.png"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa10f0e6a7fa0194585cc5d634b0a558
     m_Address: 2DPrefab/DropItem_Gold
     m_ReadOnly: 0
