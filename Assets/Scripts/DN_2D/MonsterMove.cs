@@ -1,113 +1,74 @@
+using System;
 using UnityEngine;
 
 public class MonsterMove : MonoBehaviour
 {
     // 이동 속도
     public float moveSpeed = 2f;
+    public Transform leftLimit;
+    public Transform rightLimit;
+    // 이동 범위 (Inspector에서 직접 설정)
+    // public float leftLimit = -5f;
+    // public float rightLimit = 5f;
 
-    // 이동 범위
-    public float leftLimit = -20f;
-    public float rightLimit = 20f;
+    // 방향 (true = 오른쪽, false = 왼쪽)
+    private bool moveRight = true;
 
-    // 오른쪽 이동 여부
-    private bool movingRight = true;
-
-    // 메인 카메라
-    private Camera cam;
-
+    // Rigidbody2D
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     void Start()
-    {
-        cam = Camera.main;
+    {   
+        spriteRenderer= GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+
+        // 중력 영향 제거 (2D 횡이동 필수)
+         rb.gravityScale = 0;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
-        ClampToCamera();
+       // ClampPosition(); // ⭐ 핵심: 항상 위치 강제 제한
     }
 
-    // 몬스터 이동
     void Move()
     {
-        Vector3 pos = transform.position;
+        float xVelocity;
 
-        // 오른쪽 이동
-        if (movingRight)
-        {
-            pos.x += moveSpeed * Time.deltaTime;
-
-            // 오른쪽 끝 도착
-            if (pos.x >= rightLimit)
-            {
-                pos.x = rightLimit;
-
-                movingRight = false;
-
-                Flip();
-            }
-        }
-        // 왼쪽 이동
+        // 방향에 따라 속도 결정
+        if (moveRight)
+            xVelocity = moveSpeed;
         else
+            xVelocity = -moveSpeed;
+
+        rb.linearVelocity = new Vector2(xVelocity, rb.linearVelocity.y);
+
+        // 오른쪽 끝 넘으면 방향 변경
+        if (transform.position.x >= rightLimit.position.x)
         {
-            pos.x -= moveSpeed * Time.deltaTime;
-
-            // 왼쪽 끝 도착
-            if (pos.x <= leftLimit)
-            {
-                pos.x = leftLimit;
-
-                movingRight = true;
-
-                Flip();
-            }
+            spriteRenderer.flipX = false;
+            moveRight = false;
         }
+        // 왼쪽 끝 넘으면 방향 변경
+        if (transform.position.x <= leftLimit.position.x)
+        {
+            spriteRenderer.flipX = true;
 
-        transform.position = pos;
+            moveRight = true;
+        }
     }
-
-    // 몬스터 방향 반전
-    void Flip()
+     
+    void ClampPosition()
     {
-        Vector3 scale = transform.localScale;
-
-        scale.x *= -1;
-
-        transform.localScale = scale;
-    }
-
-    // 🔥 카메라 밖 이동 방지
-    void ClampToCamera()
-    {
-        if (cam == null)
-            return;
-
         Vector3 pos = transform.position;
+        if (pos.x > rightLimit.position.x)
+            pos.x = rightLimit.position.x;
 
-        // 🔥 카메라와 몬스터 거리 계산
-        float distance =
-            Mathf.Abs(transform.position.z - cam.transform.position.z);
-
-        // 🔥 화면 경계 계산
-        Vector3 leftBound =
-            cam.ViewportToWorldPoint(new Vector3(0, 0.5f, distance));
-
-        Vector3 rightBound =
-            cam.ViewportToWorldPoint(new Vector3(1, 0.5f, distance));
-
-        // 🔥 화면 안으로 제한
-        pos.x = Mathf.Clamp(pos.x, leftBound.x, rightBound.x);
+        if (pos.x < leftLimit.position.x)
+            pos.x = leftLimit.position.x;
 
         transform.position = pos;
-    }
-
-    // Scene 창 이동 범위 표시
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-
-        Gizmos.DrawLine(
-            new Vector3(leftLimit, transform.position.y, 0),
-            new Vector3(rightLimit, transform.position.y, 0)
-        );
+        Console.WriteLine("pos.x: " + pos.x + ", pos.y: " + pos.y + ", pos.z: " + pos.z);
     }
 }
