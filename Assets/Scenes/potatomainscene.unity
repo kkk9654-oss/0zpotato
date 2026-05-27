@@ -957,7 +957,6 @@ GameObject:
   - component: {fileID: 869462298}
   - component: {fileID: 869462304}
   - component: {fileID: 869462305}
-  - component: {fileID: 869462306}
   - component: {fileID: 869462307}
   m_Layer: 0
   m_Name: 2DPlayer
@@ -1133,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DaniTech_2DPlayer
   _moveSpeed: 4
-  _jumpForce: 30
+  _jumpForce: 20
   _groundCheck: {fileID: 854200712}
   _checkRadius: 0.5
   _groundLayer:
@@ -1178,22 +1177,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869462297}
   m_Enabled: 1
---- !u!111 &869462306
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869462297}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 27e3d0bb261d2c74f9ab30ae69574d61, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!114 &869462307
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,19 +4,32 @@ public class MonsterDamage : MonoBehaviour
 {
     public int damage = 1;
 
-    // 물리 충돌이 발생했을 때 호출됨 (Trigger 아님!)
+    // 2D 물리 충돌 발생 시 호출되는 함수
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 플레이어와 충돌했는지 확인
-        if (collision.collider.CompareTag("Player"))
+        // 충돌한 오브젝트가 Player인지 확인
+        if (collision.gameObject.CompareTag("Player"))
         {
-            // 플레이어 HP 스크립트 가져오기
-            PlayerHP playerHP = collision.collider.GetComponent<PlayerHP>();
+            Debug.Log("플레이어와 충돌 감지됨");
 
-            // HP 스크립트가 존재하면 데미지 적용
+            // Player 오브젝트 또는 부모에서 PlayerHP 찾기
+            PlayerHP playerHP = collision.gameObject.GetComponent<PlayerHP>();
+
+            // 혹시 PlayerHP가 자식/부모에 있을 경우 대비
+            if (playerHP == null)
+            {
+                playerHP = collision.gameObject.GetComponentInParent<PlayerHP>();
+            }
+
+            // PlayerHP가 존재할 때만 데미지 적용
             if (playerHP != null)
             {
+                Debug.Log("데미지 적용: " + damage);
                 playerHP.TakeDamage(damage);
+            }
+            else
+            {
+                Debug.LogWarning("PlayerHP 컴포넌트를 찾지 못했습니다!");
             }
         }
     }
